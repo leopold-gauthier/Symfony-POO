@@ -18,9 +18,6 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column]
-    private ?int $id_category = null;
-
     #[ORM\ManyToMany(targetEntity: produit::class, inversedBy: 'categories')]
     private Collection $id_Produit;
 
@@ -46,17 +43,7 @@ class Category
         return $this;
     }
 
-    public function getIdCategory(): ?int
-    {
-        return $this->id_category;
-    }
-
-    public function setIdCategory(int $id_category): static
-    {
-        $this->id_category = $id_category;
-
-        return $this;
-    }
+ 
 
     /**
      * @return Collection<int, produit>

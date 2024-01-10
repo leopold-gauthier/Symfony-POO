@@ -19,6 +19,13 @@
     <body>
         {% block body %}
         <h1>SymfonyPOO</h1>
+        <button id="boutonRedirection">Bouton vers une autre page</button>
+
+<script>
+    document.getElementById('boutonRedirection').addEventListener('click', function() {
+        window.location.href = "{{path('app_produits')}}";
+    });
+</script>
         {% endblock %}
     </body>
 </html>

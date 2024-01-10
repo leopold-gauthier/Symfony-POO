@@ -16,5 +16,12 @@
         <li>Your controller at <code><a href="{{ 'C:/Users/dropz/Documents/SymfonyPOO/src/Controller/ProduitsController.php'|file_link(0) }}">src/Controller/ProduitsController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/dropz/Documents/SymfonyPOO/templates/produits/index.html.twig'|file_link(0) }}">templates/produits/index.html.twig</a></code></li>
     </ul>
+     <button id="boutonRedirection">Bouton vers l'accueil</button>
+
+<script>
+    document.getElementById('boutonRedirection').addEventListener('click', function() {
+        window.location.href = "{{path('app_homepage')}}";
+    });
+</script>
 </div>
 {% endblock %}

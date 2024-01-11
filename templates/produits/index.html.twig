@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProduitsController!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,15 +7,21 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Ajouter un produit</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/dropz/Documents/SymfonyPOO/src/Controller/ProduitsController.php'|file_link(0) }}">src/Controller/ProduitsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/dropz/Documents/SymfonyPOO/templates/produits/index.html.twig'|file_link(0) }}">templates/produits/index.html.twig</a></code></li>
-    </ul>
-     <button id="boutonRedirection">Bouton vers l'accueil</button>
+    {{ form_start(formProduit) }}
+    
+    {{ form_row(formProduit.name) }}
+    
+    {{ form_row(formProduit.stock) }}
+    
+    {{ form_row(formProduit.description) }}
+
+    {{ form_end(formProduit) }}
+
+
+
+<button id="boutonRedirection">Bouton vers l'accueil</button>
 
 <script>
     document.getElementById('boutonRedirection').addEventListener('click', function() {

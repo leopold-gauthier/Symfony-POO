@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class ProduitsController extends AbstractController
 {
     private $entityManager;
@@ -40,4 +41,6 @@ class ProduitsController extends AbstractController
             ['formProduit' => $form->createView()]
         );
     }
+
+   
 }

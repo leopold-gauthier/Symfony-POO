@@ -17,15 +17,41 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-        <h1>SymfonyPOO</h1>
-        <button id="boutonRedirection">Bouton vers une autre page</button>
+    <nav>
+        <a href="{{path('app_homepage')}}">Home</a>
+        <a href="{{path('app_produits')}}">New product</a>
 
-<script>
-    document.getElementById('boutonRedirection').addEventListener('click', function() {
-        window.location.href = "{{path('app_produits')}}";
-    });
-</script>
+        {% if app.user %}
+        <a href="{{path('app_logout')}}">Logout</a>
+        {% else %}
+        <a href="{{path('app_login')}}">Login<a>
+        <a href="{{path('app_register')}}">Register</a>
+        {% endif %}
+
+
+    </nav>
+        {% block body %}
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <!-- Autres colonnes si nécessaire -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.name }}</td>
+                <td>{{ produit.stock }}</td>
+                <td>{{ produit.description }}</td>
+                <!-- Autres colonnes si nécessaire -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
         {% endblock %}
     </body>
 </html>

@@ -1,12 +1,23 @@
 body {
 display: flex;
 flex-direction: column;
-align-items: center;
+align-items: stretch;
     background-color: rgb(57, 57, 57);
 }
 
 button{
     margin: 5% 0%;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+a{
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 h1{
@@ -16,15 +27,21 @@ color: white;
 }
 
 form{
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
-
-form div{
+form div {
     font-family: 'Roboto', sans-serif;
     display: flex;
+    color: white;
     flex-direction: column;
+    align-items: center;
+}
+
+label{
+    font-family: 'Roboto', sans-serif;
+
     color: white;
 }

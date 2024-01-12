@@ -23,10 +23,11 @@ class AjoutProduitType extends AbstractType
             ->add('stock')
             ->add('description')
             ->add('categories', EntityType::class, [
-                'required' => false,
-                'class' => Category::class,
+                'class' => 'App\Entity\Category',
                 'choice_label' => 'name',
-                'multiple' => true,
+                'multiple' => true, // permet la sélection de plusieurs catégories
+                'expanded' => true, // affiche les catégories sous forme de cases à cocher
+                'label' => 'Catégories',
             ])
             ->add('submit',SubmitType::class,[
                 'label' => 'Ajouter Produit'
